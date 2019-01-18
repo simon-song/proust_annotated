@@ -1,0 +1,140 @@
+%% uses classicthesis class done by Andre Miede
+
+\RequirePackage{fix-cm} % fix some latex issues see: http://texdoc.net/texmf-dist/doc/latex/base/fixltx2e.pdf
+\documentclass[ twoside,openright,titlepage,numbers=noenddot,headinclude,%1headlines,% letterpaper a4paper
+                footinclude=true,cleardoublepage=empty,abstractoff, % <--- obsolete, remove (todo)
+                %BCOR=5mm,paper=a4,fontsize=11pt,%11pt,a4paper,%
+                BCOR=5mm,paper=a4,fontsize=14pt,%11pt,a4paper,%
+                ngerman,american,%
+                ]{scrreprt}
+
+%********************************************************************
+% Note: Make all your adjustments in here
+%*******************************************************
+\input{classicthesis-config}
+
+%********************************************************************
+% Bibliographies
+%*******************************************************
+%\addbibresource{Bibliography.bib}
+%\addbibresource[label=ownpubs]{AMiede_Publications.bib}
+
+%********************************************************************
+% Hyphenation
+%*******************************************************
+%\hyphenation{put special hyphenation here}
+
+
+%%% my code
+\usepackage{fontspec}
+%\setmainfont[Ligatures=TeX]{Palatino}
+%\setmainfont[Ligatures=TeX]{Minion Pro}
+\setmainfont[Ligatures=TeX]{Linux Libertine O}
+
+% \newfontfamily\g{GFSPorson.ttf}
+% 
+% \newfontfamily{\bradleyfamily}[Scale=MatchLowercase]{Bradley Hand} 
+% %\newfontfamily{\bradleyfamily}[Scale=MatchLowercase]{Bradley Hand ITC}  % on windows
+% %\newfontfamily{\bradleyfamily}[Scale=MatchLowercase]{Akbar}  % Simpons like
+% \DeclareTextFontCommand{\bradley}{\bradleyfamily} % handwritten 
+
+\usepackage{xeCJK} % for Chinese input
+
+%\usepackage[autostyle=false, style=english]{csquotes}
+\MakeOuterQuote{"}
+
+\usepackage{sidenotes} % \sidenote and marginfigure environment
+
+\usepackage{setspace} 
+\setstretch{1.2} % larger space between lines
+
+\usepackage{amsmath}
+%\usepackage[french]{babel}
+\usepackage{amssymb}
+
+%% PRL style seperator between paragraphs
+\newcommand{\PRLsep}
+{\noindent\makebox[\linewidth]{\resizebox{0.3333\linewidth}{1pt}
+{$\blacklozenge$}}\bigskip}
+
+
+
+% ********************************************************************
+% GO!GO!GO! MOVE IT!
+%*******************************************************
+\begin{document}
+\frenchspacing
+\raggedbottom
+\selectlanguage{american} % american ngerman
+%\renewcommand*{\bibname}{new name}
+%\setbibpreamble{}
+\pagenumbering{roman}
+\pagestyle{plain}
+
+%********************************************************************
+% Frontmatter
+%*******************************************************
+% \include{FrontBackmatter/DirtyTitlepage}
+% \include{FrontBackmatter/Titlepage}
+% \include{FrontBackmatter/Titleback}
+% \cleardoublepage\include{FrontBackmatter/Dedication}
+% %\cleardoublepage\include{FrontBackmatter/Foreword}
+% \cleardoublepage\include{FrontBackmatter/Abstract}
+% \cleardoublepage\include{FrontBackmatter/Publications}
+% \cleardoublepage\include{FrontBackmatter/Acknowledgments}
+% \pagestyle{scrheadings}
+% \cleardoublepage\include{FrontBackmatter/Contents}
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+\cleardoublepage
+\pagenumbering{roman}
+\pagestyle{headings}
+\tableofcontents
+
+%********************************************************************
+% Mainmatter
+%*******************************************************
+\cleardoublepage\pagenumbering{arabic}
+
+% %\setcounter{page}{90}
+% % use \cleardoublepage here to avoid problems with pdfbookmark
+% \cleardoublepage
+% \part{Some Kind of Manual}
+% \include{Chapters/Chapter01}
+% \cleardoublepage
+% \ctparttext{You can put some informational part preamble text here. 
+% Illo principalmente su nos. Non message \emph{occidental} angloromanic
+% da. Debitas effortio simplificate sia se, auxiliar summarios da que,
+% se avantiate publicationes via. Pan in terra summarios, capital
+% interlingua se que. Al via multo esser specimen, campo responder que
+% da. Le usate medical addresses pro, europa origine sanctificate nos se.}
+% 
+% \part{The Showcase}
+% \include{Chapters/Chapter02}
+% %\addtocontents{toc}{\protect\clearpage} % <--- just debug stuff, ignore
+% \include{Chapters/Chapter03}
+% %\include{multiToC} % <--- just debug stuff, ignore for your documents
+
+\include{swann}
+
+% ********************************************************************
+% Backmatter
+%*******************************************************
+% \appendix
+% %\renewcommand{\thechapter}{\alph{chapter}}
+% \cleardoublepage
+% \part{Appendix}
+% \include{Chapters/Chapter0A}
+% 
+% %********************************************************************
+% % Other Stuff in the Back
+% %*******************************************************
+% \cleardoublepage\include{FrontBackmatter/Bibliography}
+% \cleardoublepage\include{FrontBackmatter/Declaration}
+% \cleardoublepage\include{FrontBackmatter/Colophon}
+% % ********************************************************************
+% % Game Over: Restore, Restart, or Quit?
+% %*******************************************************
+
+
+\end{document}
